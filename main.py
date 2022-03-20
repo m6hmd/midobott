@@ -35,7 +35,7 @@ def S(message):
                     bot.send_message(message.chat.id, f"URL :: {url}\nTime :: {responseTime.replace('января в','1').replace('февраля','2').replace('марта','3').replace('мая','5').replace('июля','7').replace('августа','8').replace('октября','10')}")
                 else:
                     bot.send_message(message.chat.id, f"URL :: {url}\nTime :: Don't Have Post")
-            time.sleep(2)
+            time.sleep(5)
 
 @server.route(f"/{BOT_TOKEN}", methods=["POST"])
 def redirect_message():
