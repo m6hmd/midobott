@@ -6,7 +6,7 @@ import logging
 from config import *
 from flask import Flask, request
 
-BOT_TOKEN = "1206956607:AAGApSGAcjNK_eKu8gad72IZgaNtKLV2fiQ"
+BOT_TOKEN = "1206956607:AAEC2zic6D6hrnY7fQf6GW3jMx1wFW1Z8co"
 bot = telebot.TeleBot(BOT_TOKEN)
 server = Flask(__name__)
 logger = telebot.logger
@@ -32,7 +32,7 @@ def S(message):
             if "Public channel" in response.text or "Open channel" in response.text:
                 if 'data-url="' in response.text:
                     responseTime = requests.get(str((response.text.split('data-url="')[1]).split('">')[0])).text.split("<time>")[1].split(" </time>")[0]
-                    bot.send_message(message.chat.id, f"URL :: {url}\nTime :: {responseTime.replace('января в','1').replace('февраля','2').replace('марта','3').replace('мая','5').replace('июля','7').replace('августа','8').replace('октября','10') .replace('июня','6').replace('апреля','4').replace('сентября','9').replace('ноября','11').replace('декабря','12')}")
+                    bot.send_message(message.chat.id, f"URL :: {url}\nTime :: {responseTime.replace('января в','1').replace('февраля','2').replace('марта в','3').replace('мая','5').replace('июля','7').replace('августа','8').replace('октября','10') .replace('июня','6').replace('апреля','4').replace('сентября','9').replace('ноября','11').replace('декабря','12')}")
                 else:
                     bot.send_message(message.chat.id, f"URL :: {url}\nTime :: Don't Have Post")
             time.sleep(5)
